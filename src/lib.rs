@@ -42,8 +42,7 @@ fn setup_webview(world: &mut World) -> Result<()> {
         .get_window(primary_window_entity)
         .ok_or(Error::FailedToGetMainWindow)?;
 
-    let webview = WebViewBuilder::new_as_child(primary_window)
-        .with_transparent(true)
+    let webview = WebViewBuilder::new(primary_window)
         .with_url(&wry_config.url)?
         .build()?;
 
