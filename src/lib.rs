@@ -44,6 +44,7 @@ fn setup_webview(world: &mut World) -> Result<()> {
 
     let webview = WebViewBuilder::new(primary_window)
         .with_url(&wry_config.url)?
+        .with_transparent(true)
         .build()?;
 
     world.insert_resource(wry_config.url);
